@@ -17,10 +17,22 @@ This is our monolithic backend repo, in Django.
 4. Enter the pipenv virtual environment
 `pipenv shell`
 
-5. Run the bot:
+5. Copy the `.env.example` file into a new `.env` file.
+
+5. Run the server:
 `python manage.py runserver`
 
 Boom! It's that easy -- you're now running Qrono locally.
+
+## Authentication
+- In order to hit some API endpoints, you must be authenticated. 
+- To authenticate, create an API key AND add a user that's connected to the same account and classified as an "api robot"
+
+## Deployment
+- Our backend is deployed via Heroku
+- We use Netlify for our DNS 
+- Qrono.dev is registered via Namecheap
+- Get the login credentials for accounts from 1Password
 
 
 ## Contributing Code
@@ -41,6 +53,18 @@ Before submitting code run: `pipenv run black .` to autoformat your code.
 - A version of python 3.9 installed and added to your PATH (for help: [install python 3](https://www.codecademy.com/articles/install-python3))
 - A version of [pipenv](https://pypi.org/project/pipenv/) installed
 - [Postgresql](https://www.postgresql.org/)
+
+
+## Installing Postgres using Homebrew (for MacOS)
+
+Run this in your terminal:
+
+```sh
+brew install postgresql
+brew services start postgresql
+```
+
+Postgres should start automatically. If you run into trouble, refer to [this guide](https://goonan.io/setting-up-postgresql-on-os-x-2/).
 
 
 ## Installing Python
@@ -65,6 +89,7 @@ Here's how you can use a python 3.9 environment in your `qrono` directory:
 
 4. Install the latest version of pipenv:
 `pip install pipenv`
+
 
 ### Troubleshooting Python Installs
 ##### OpenSSL
